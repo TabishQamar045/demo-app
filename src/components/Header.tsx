@@ -21,8 +21,8 @@ const Header = () => {
           sx={{
             bgcolor: 'white',
             color: 'text.primary',
-            border: '1px solid',
-            borderColor: 'text.primary',
+            border: '2px solid',
+            borderColor: '#f3f7f8',
             borderRadius: 2,
             height: '48px',
             px: 4,
@@ -30,7 +30,7 @@ const Header = () => {
               bgcolor: 'rgba(0, 0, 0, 0.04)',
             },
             textTransform: 'none',
-            fontSize: '0.875rem',
+            fontSize: '1rem',
           }}
         >
           Export

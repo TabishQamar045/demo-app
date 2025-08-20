@@ -14,7 +14,7 @@ export default function Home() {
       title: 'A 5 min walkthrough: How to handle conversations',
       description: 'Learn the basics of handling customer conversations effectively',
       platform: 'YouTube',
-      thumbnail: '/images/utube.png',
+      thumbnail: '/images/youtube.webp',
     },
     {
       title: 'Conversation analytics introduction',
@@ -73,7 +73,7 @@ export default function Home() {
                 whiteSpace: 'nowrap',
               }}
             >
-              Assigned
+              All
             </Box>
             <Box
               onClick={() => setSelectedFilter('assigned')}

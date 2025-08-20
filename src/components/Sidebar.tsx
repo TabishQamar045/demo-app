@@ -33,7 +33,7 @@ export default function Sidebar() {
       icon: (
         <Box sx={{ position: 'relative', width: 28, height: 28 }}>
           <Image
-            src="/images/siri.webp"
+            src="/images/siri.png"
             alt="Siri Icon"
             fill
             style={{ objectFit: 'contain' }}
@@ -47,8 +47,10 @@ export default function Sidebar() {
 
   const bottomMenuItems = [
     { id: 'notifications', icon: <NotificationsOutlinedIcon sx={{ fontSize: 28 }} /> },
-    { id: 'profile', icon: <PersonOutlineOutlinedIcon sx={{ fontSize: 28 }} /> },
     { id: 'library', icon: <LibraryBooksOutlinedIcon sx={{ fontSize: 28 }} /> },
+    { id: 'profile', icon: <PersonOutlineOutlinedIcon sx={{ fontSize: 28 }} /> },
+
+  
   ];
 
   const sidebarContent = (

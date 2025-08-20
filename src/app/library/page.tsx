@@ -14,7 +14,7 @@ export default function LibraryPage() {
       title: 'A 5 min walkthrough: How to handle conversations',
       description: 'Learn the basics of handling customer conversations effectively',
       platform: 'YouTube',
-      thumbnail: '/images/utube.png',
+      thumbnail: '/images/youtube.png',
     },
     {
       title: 'Conversation analytics introduction',
@@ -37,59 +37,62 @@ export default function LibraryPage() {
         flexGrow: 1,
         p: 3,
         width: { sm: `calc(100% - 80px)` },
-        bgcolor: 'background.default',
+        bgcolor: 'white',
       }}
     >
       <Header />
 
-      <Box sx={{ mt: 3 }}>
+      <Box sx={{ mt: 3, }}>
         {/* Filter Section */}
         <Box sx={{ 
           width: '100%',
           mb: 3,
-          bgcolor: '#80A9AD',
+          bgcolor: '#f3f7f8',
           borderRadius: 3,
-          height: '48px',
+                      height: '56px',
+            p: 0.5,
         }}>
           <Box sx={{ 
             display: 'flex',
             alignItems: 'center',
             height: '100%',
             p: 0.5,
-            ml: -0.5,
             gap: 1,
+            mx: 0.5,
           }}>
             <Box
               onClick={() => setSelectedFilter('all')}
               sx={{
-                px: 3,
-                py: 1,
+                px: selectedFilter === 'all' ? 4 : 3,
+                py: selectedFilter === 'all' ? 1.5 : 1,
+                mx: selectedFilter === 'all' ? 0.5 : 0,
                 borderRadius: 2,
                 cursor: 'pointer',
-                color: selectedFilter === 'all' ? '#80A9AD' : 'white',
+                color: 'black',
                 bgcolor: selectedFilter === 'all' ? 'white' : 'transparent',
-                fontWeight: selectedFilter === 'all' ? 'bold' : 'normal',
+                fontWeight: selectedFilter === 'all' ? 600 : 400,
                 transition: 'all 0.2s',
                 whiteSpace: 'nowrap',
               }}
             >
-              Assigned
+            All
             </Box>
             <Box
               onClick={() => setSelectedFilter('assigned')}
               sx={{
-                px: 3,
-                py: 1,
+                px: selectedFilter === 'assigned' ? 4 : 3,
+                py: selectedFilter === 'assigned' ? 1.5 : 1,
+                mx: selectedFilter === 'assigned' ? 0.5 : 0,
                 borderRadius: 2,
                 cursor: 'pointer',
-                color: selectedFilter === 'assigned' ? '#80A9AD' : 'white',
+                color: 'black',
                 bgcolor: selectedFilter === 'assigned' ? 'white' : 'transparent',
-                fontWeight: selectedFilter === 'assigned' ? 'bold' : 'normal',
+                fontWeight: selectedFilter === 'assigned' ? 600 : 400,
                 transition: 'all 0.2s',
                 whiteSpace: 'nowrap',
               }}
             >
-              Assigned only
+              Assigned all
             </Box>
           </Box>
         </Box>
@@ -99,7 +102,13 @@ export default function LibraryPage() {
           <Box sx={{ 
             display: 'grid', 
             gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr' }, 
-            gap: 3 
+            gap: 4,
+            pr: 3, // Align with export button
+            '& .MuiCard-root': {
+              maxWidth: '320px',  // Make cards slightly narrower
+              height: '320px',    // Make cards taller
+              margin: '0 auto',   // Center cards in their grid cells
+            }
           }}>
             {videos.map((video, index) => (
               <Box key={index}>

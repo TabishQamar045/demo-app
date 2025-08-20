@@ -10,7 +10,7 @@ export default function SiriPage() {
         flexGrow: 1,
         p: 3,
         width: { sm: `calc(100% - 80px)` },
-        bgcolor: 'background.default',
+        bgcolor: 'white',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',

@@ -23,7 +23,7 @@ const VideoCard = ({ title, description, thumbnail }: VideoCardProps) => {
         overflow: 'hidden',
       }}
     >
-      <Box sx={{ position: 'relative', width: '100%', height: 180 }}>
+      <Box sx={{ position: 'relative', width: '100%', height: 200 }}>
         <Image
           src={thumbnail}
           alt={title}
@@ -32,7 +32,7 @@ const VideoCard = ({ title, description, thumbnail }: VideoCardProps) => {
           priority
         />
       </Box>
-      <CardContent sx={{ flexGrow: 1 }}>
+      <CardContent sx={{ flexGrow: 1, p: 3 }}>
         <Typography 
           variant="subtitle1" 
           component="div" 
