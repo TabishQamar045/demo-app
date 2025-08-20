@@ -1,12 +1,13 @@
 'use client';
 
 import { Box, Drawer, List, ListItem, Badge, Avatar, IconButton } from '@mui/material';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import LibraryBooksOutlinedIcon from '@mui/icons-material/LibraryBooksOutlined';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
-import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
 import Image from 'next/image';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 
@@ -17,8 +18,18 @@ export default function Sidebar() {
     setMobileOpen(!mobileOpen);
   };
 
+  const router = useRouter();
+  const pathname = usePathname();
+  const [activeIcon, setActiveIcon] = useState('library');
+
+  useEffect(() => {
+    const path = pathname.split('/')[1] || 'library';
+    setActiveIcon(path);
+  }, [pathname]);
+
   const mainMenuItems = [
     { 
+      id: 'siri',
       icon: (
         <Box sx={{ position: 'relative', width: 28, height: 28 }}>
           <Image
@@ -30,14 +41,14 @@ export default function Sidebar() {
         </Box>
       )
     },
-    { icon: <HomeOutlinedIcon sx={{ fontSize: 28 }} /> },
-    { icon: <LibraryBooksOutlinedIcon sx={{ fontSize: 28 }} /> },
+    { id: 'home', icon: <HomeOutlinedIcon sx={{ fontSize: 28 }} /> },
+    { id: 'bookmarks', icon: <BookmarkBorderOutlinedIcon sx={{ fontSize: 28 }} /> },
   ];
 
   const bottomMenuItems = [
-    { icon: <NotificationsOutlinedIcon sx={{ fontSize: 28 }} /> },
-    { icon: <SettingsOutlinedIcon sx={{ fontSize: 28 }} /> },
-    { icon: <PersonOutlineOutlinedIcon sx={{ fontSize: 28 }} /> },
+    { id: 'notifications', icon: <NotificationsOutlinedIcon sx={{ fontSize: 28 }} /> },
+    { id: 'profile', icon: <PersonOutlineOutlinedIcon sx={{ fontSize: 28 }} /> },
+    { id: 'library', icon: <LibraryBooksOutlinedIcon sx={{ fontSize: 28 }} /> },
   ];
 
   const sidebarContent = (
@@ -49,13 +60,15 @@ export default function Sidebar() {
     }}>
       {/* Main Menu */}
       <List sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        {mainMenuItems.map((item, index) => (
+        {mainMenuItems.map((item) => (
           <ListItem
             component="div"
-            key={index}
+            key={item.id}
+            onClick={() => router.push(`/${item.id}`)}
             sx={{
               width: 'auto',
               color: 'white',
+              bgcolor: activeIcon === item.id ? 'rgba(255, 255, 255, 0.1)' : 'transparent',
               '&:hover': {
                 bgcolor: 'rgba(255, 255, 255, 0.1)',
                 cursor: 'pointer',
@@ -63,9 +76,13 @@ export default function Sidebar() {
               mb: 2,
               p: 1.5,
               borderRadius: '50%',
+              transition: 'all 0.2s',
             }}
           >
-            <Box sx={{ color: 'white' }}>
+            <Box sx={{ 
+              color: 'white',
+              opacity: activeIcon === item.id ? 1 : 0.7,
+            }}>
               {item.icon}
             </Box>
           </ListItem>
@@ -74,13 +91,15 @@ export default function Sidebar() {
 
       {/* Bottom Menu */}
       <List sx={{ mt: 'auto', mb: 2, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        {bottomMenuItems.map((item, index) => (
+        {bottomMenuItems.map((item) => (
           <ListItem
             component="div"
-            key={index}
+            key={item.id}
+            onClick={() => router.push(`/${item.id}`)}
             sx={{
               width: 'auto',
               color: 'white',
+              bgcolor: activeIcon === item.id ? 'rgba(255, 255, 255, 0.1)' : 'transparent',
               '&:hover': {
                 bgcolor: 'rgba(255, 255, 255, 0.1)',
                 cursor: 'pointer',
@@ -88,9 +107,13 @@ export default function Sidebar() {
               mb: 2,
               p: 1.5,
               borderRadius: '50%',
+              transition: 'all 0.2s',
             }}
           >
-            <Box sx={{ color: 'white' }}>
+            <Box sx={{ 
+              color: 'white',
+              opacity: activeIcon === item.id ? 1 : 0.7,
+            }}>
               {item.icon}
             </Box>
           </ListItem>

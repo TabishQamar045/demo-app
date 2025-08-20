@@ -6,7 +6,7 @@ import Header from '@/components/Header';
 import VideoCard from '@/components/VideoCard';
 import TabSection from '@/components/TabSection';
 
-export default function Home() {
+export default function LibraryPage() {
   const [selectedFilter, setSelectedFilter] = useState('all');
 
   const videos = [
@@ -49,14 +49,14 @@ export default function Home() {
           mb: 3,
           bgcolor: '#80A9AD',
           borderRadius: 3,
-          height: '48px', // Match export button height
+          height: '48px',
         }}>
           <Box sx={{ 
             display: 'flex',
             alignItems: 'center',
             height: '100%',
             p: 0.5,
-            ml: -0.5, // Align with the header
+            ml: -0.5,
             gap: 1,
           }}>
             <Box
