@@ -20,11 +20,11 @@ export default function Sidebar() {
 
   const router = useRouter();
   const pathname = usePathname();
-  const [activeIcon, setActiveIcon] = useState('library');
+  const [activeIcon, setActiveIcon] = useState('home');
 
   useEffect(() => {
-    const path = pathname.split('/')[1] || 'library';
-    setActiveIcon(path);
+    const path = pathname.split('/')[1];
+    setActiveIcon(path || 'home');
   }, [pathname]);
 
   const mainMenuItems = [
@@ -195,7 +195,7 @@ export default function Sidebar() {
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 80 },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 80, bgcolor: '#006D77', color: 'white' },
           }}
         >
           {sidebarContent}

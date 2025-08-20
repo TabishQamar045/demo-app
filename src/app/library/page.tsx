@@ -58,7 +58,6 @@ export default function LibraryPage() {
             sx={{
               display: 'flex',
               flexDirection: { xs: 'column', sm: 'row' },
-              alignItems: 'stretch',
               height: '100%',
               p: 0.5,
               gap: 1,
@@ -68,8 +67,10 @@ export default function LibraryPage() {
             <Box
               onClick={() => setSelectedFilter('all')}
               sx={{
+                height: '40px',
+                display: 'flex',
+                alignItems: 'center',
                 px: selectedFilter === 'all' ? 4 : 3,
-                py: selectedFilter === 'all' ? 1.5 : 1,
                 mx: selectedFilter === 'all' ? 0.5 : 0,
                 borderRadius: 2,
                 cursor: 'pointer',
@@ -85,8 +86,10 @@ export default function LibraryPage() {
             <Box
               onClick={() => setSelectedFilter('assigned')}
               sx={{
+                height: '40px',
+                display: 'flex',
+                alignItems: 'center',
                 px: selectedFilter === 'assigned' ? 4 : 3,
-                py: selectedFilter === 'assigned' ? 1.5 : 1,
                 mx: selectedFilter === 'assigned' ? 0.5 : 0,
                 borderRadius: 2,
                 cursor: 'pointer',

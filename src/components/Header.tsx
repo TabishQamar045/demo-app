@@ -13,7 +13,7 @@ const Header = () => {
         pl: { xs: 5, sm: 0 }
       }}>
         <SchoolIcon sx={{ fontSize: 16, mr: 1, color: 'text.secondary' }} />
-        <Typography variant="caption" color="text.secondary">
+        <Typography variant="caption" color="text.secondary" sx={{ fontSize: { xs: '0.75rem', sm: '1rem' } }}>
           Coaching library
         </Typography>
       </Box>
