@@ -3,9 +3,15 @@ import SchoolIcon from '@mui/icons-material/School';
 
 const Header = () => {
   return (
-    <Box>
+    <Box sx={{ mt: { xs: 4, sm: 0 } }}>
       {/* Small title with icon */}
-      <Box sx={{ display: 'flex', alignItems: 'center', mb: 1, ml: -0.5 }}>
+      <Box sx={{ 
+        display: 'flex', 
+        alignItems: 'center', 
+        mb: 1,
+        ml: { xs: 0, sm: -0.5 },
+        pl: { xs: 5, sm: 0 }
+      }}>
         <SchoolIcon sx={{ fontSize: 16, mr: 1, color: 'text.secondary' }} />
         <Typography variant="caption" color="text.secondary">
           Coaching library
@@ -13,8 +19,22 @@ const Header = () => {
       </Box>
 
       {/* Main header */}
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Typography variant="h5" fontWeight="bold" sx={{ ml: -0.5 }}>
+      <Box sx={{ 
+        display: 'flex', 
+        flexDirection: { xs: 'column', sm: 'row' },
+        gap: { xs: 2, sm: 0 },
+        justifyContent: 'space-between', 
+        alignItems: { xs: 'flex-start', sm: 'center' },
+        pl: { xs: 5, sm: 0 }
+      }}>
+        <Typography 
+          variant="h5" 
+          fontWeight="bold" 
+          sx={{ 
+            ml: { xs: 0, sm: -0.5 },
+            fontSize: { xs: '1.25rem', sm: '1.5rem' }
+          }}
+        >
           Coaching Library
         </Typography>
         <IconButton
@@ -25,12 +45,13 @@ const Header = () => {
             borderColor: '#f3f7f8',
             borderRadius: 2,
             height: '48px',
-            px: 4,
+            px: { xs: 3, sm: 4 },
             '&:hover': {
               bgcolor: 'rgba(0, 0, 0, 0.04)',
             },
             textTransform: 'none',
-            fontSize: '1rem',
+            fontSize: { xs: '0.875rem', sm: '1rem' },
+            alignSelf: { xs: 'stretch', sm: 'auto' },
           }}
         >
           Export

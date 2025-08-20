@@ -168,7 +168,19 @@ export default function Sidebar() {
         aria-label="open drawer"
         edge="start"
         onClick={handleDrawerToggle}
-        sx={{ mr: 2, display: { sm: 'none' }, position: 'absolute', top: 10, left: 10 }}
+        sx={{ 
+          mr: 2, 
+          display: { sm: 'none' }, 
+          position: 'fixed', 
+          top: 10, 
+          left: 10,
+          bgcolor: 'white',
+          zIndex: 1200,
+          boxShadow: 1,
+          '&:hover': {
+            bgcolor: 'white',
+          }
+        }}
       >
         <MenuOutlinedIcon />
       </IconButton>

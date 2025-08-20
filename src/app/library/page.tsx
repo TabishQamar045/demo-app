@@ -35,7 +35,7 @@ export default function LibraryPage() {
       component="main"
       sx={{
         flexGrow: 1,
-        p: 3,
+        p: { xs: 2, sm: 3 },
         width: { sm: `calc(100% - 80px)` },
         bgcolor: 'white',
       }}
@@ -50,14 +50,15 @@ export default function LibraryPage() {
             mb: 3,
             bgcolor: '#f3f7f8',
             borderRadius: 3,
-            height: '56px',
+            height: { xs: 'auto', sm: '56px' },
             p: 0.5,
           }}
         >
           <Box
             sx={{
               display: 'flex',
-              alignItems: 'center',
+              flexDirection: { xs: 'column', sm: 'row' },
+              alignItems: 'stretch',
               height: '100%',
               p: 0.5,
               gap: 1,
