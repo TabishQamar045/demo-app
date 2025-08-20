@@ -42,24 +42,28 @@ export default function LibraryPage() {
     >
       <Header />
 
-      <Box sx={{ mt: 3, }}>
+      <Box sx={{ mt: 3 }}>
         {/* Filter Section */}
-        <Box sx={{ 
-          width: '100%',
-          mb: 3,
-          bgcolor: '#f3f7f8',
-          borderRadius: 3,
-                      height: '56px',
+        <Box
+          sx={{
+            width: '100%',
+            mb: 3,
+            bgcolor: '#f3f7f8',
+            borderRadius: 3,
+            height: '56px',
             p: 0.5,
-        }}>
-          <Box sx={{ 
-            display: 'flex',
-            alignItems: 'center',
-            height: '100%',
-            p: 0.5,
-            gap: 1,
-            mx: 0.5,
-          }}>
+          }}
+        >
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              height: '100%',
+              p: 0.5,
+              gap: 1,
+              mx: 0.5,
+            }}
+          >
             <Box
               onClick={() => setSelectedFilter('all')}
               sx={{
@@ -75,7 +79,7 @@ export default function LibraryPage() {
                 whiteSpace: 'nowrap',
               }}
             >
-            All
+              All
             </Box>
             <Box
               onClick={() => setSelectedFilter('assigned')}
@@ -92,24 +96,26 @@ export default function LibraryPage() {
                 whiteSpace: 'nowrap',
               }}
             >
-              Assigned all
+              Assigned only
             </Box>
           </Box>
         </Box>
 
         {/* Tab Section with Content */}
         <TabSection>
-          <Box sx={{ 
-            display: 'grid', 
-            gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr' }, 
-            gap: 4,
-            pr: 3, // Align with export button
-            '& .MuiCard-root': {
-              maxWidth: '320px',  // Make cards slightly narrower
-              height: '320px',    // Make cards taller
-              margin: '0 auto',   // Center cards in their grid cells
-            }
-          }}>
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr' },
+              gap: 4,
+              pr: 3, // Align with export button
+              '& .MuiCard-root': {
+                maxWidth: '320px', // Make cards slightly narrower
+                height: '320px', // Make cards taller
+                margin: '0 auto', // Center cards in their grid cells
+              },
+            }}
+          >
             {videos.map((video, index) => (
               <Box key={index}>
                 <VideoCard {...video} />
