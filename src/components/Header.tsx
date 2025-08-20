@@ -6,11 +6,10 @@ const Header = () => {
     <Box sx={{ mt: { xs: 4, sm: 0 } }}>
       {/* Small title with icon */}
       <Box sx={{ 
+        height: '80px',  
         display: 'flex', 
-        alignItems: 'center', 
-        mb: 1,
-        ml: { xs: 0, sm: -0.5 },
-        pl: { xs: 5, sm: 0 }
+        alignItems: 'center',
+        pl: { xs: 6.5, sm: 1.5 }  
       }}>
         <SchoolIcon sx={{ fontSize: 16, mr: 1, color: 'text.secondary' }} />
         <Typography variant="caption" color="text.secondary" sx={{ fontSize: { xs: '0.75rem', sm: '1rem' } }}>
@@ -25,7 +24,7 @@ const Header = () => {
         gap: { xs: 2, sm: 0 },
         justifyContent: 'space-between', 
         alignItems: { xs: 'flex-start', sm: 'center' },
-        pl: { xs: 5, sm: 0 }
+        pl: { xs: 6.5, sm: 1.5 }
       }}>
         <Typography 
           variant="h5" 

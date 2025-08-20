@@ -55,6 +55,8 @@ const TabSection = ({ children }: { children: React.ReactNode }) => {
         sx={{
           borderRight: 1,
           borderColor: 'divider',
+          borderRightWidth: '2px',
+          height: '70vh',
           minWidth: '250px',
           '& .MuiTab-root': {
             alignItems: 'flex-start',
